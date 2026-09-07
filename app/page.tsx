@@ -1,6 +1,6 @@
 "use client";
 
-import FloatingActions from "@/component/FloatingActions";
+import FloatingActions from "@/component/FloatingActions"; 
 import Navbar from "@/component/navbar";
 import Footer from "@/component/footer";
 import ClientsSection from "@/component/animatedCollaborators";
