@@ -103,14 +103,31 @@ export default function Navbar() {
             </motion.button>
 
             {/* Quick Action Button */}
-            <motion.a
-              whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(255,196,0,0.35)" }}
-              whileTap={{ scale: 0.95 }}
-              href="/Contact#initiate-brief"
-              className="px-4 lg:px-5 py-2 rounded-full bg-[#FFC400] text-[#1a1200] font-mono text-xs font-extrabold uppercase tracking-widest hover:bg-[#ffe082] transition-all shadow-md"
-            >
-              {isAr ? "ابدأ مشروعك" : "START BRIEF"}
-            </motion.a>
+<motion.a
+  whileHover={{ 
+    scale: 1.04, 
+    boxShadow: "0 0 25px rgba(255, 196, 0, 0.45)",
+    borderColor: "#FFE082" 
+  }}
+  whileTap={{ scale: 0.96 }}
+  href="/Contact#initiate-brief"
+  className="group relative inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#FFC400] via-[#ffd54f] to-[#FFC400] text-[#120d24] font-sans text-xs font-black uppercase tracking-wider border border-[#FFE082]/60 shadow-[0_4px_15px_rgba(255,196,0,0.25)] transition-all overflow-hidden"
+>
+  {/* لمعان سائل خفيف خلف النص عند الـ Hover */}
+  <span className="absolute inset-0 w-full h-full bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
+
+  {/* نص الزر */}
+  <span className="relative z-10 font-bold">
+    {isAr ? "ابدأ مشروعك" : "Start Brief"}
+  </span>
+
+  {/* الدائرة الصغيرة المحتوية على السهم */}
+  <span className="relative z-10 w-5 h-5 rounded-full bg-[#120d24] text-[#FFC400] flex items-center justify-center text-[10px] font-bold group-hover:bg-white group-hover:text-[#120d24] transition-colors duration-300">
+    <span className={`transform transition-transform duration-300 ${isAr ? "group-hover:-translate-x-0.5" : "group-hover:translate-x-0.5"}`}>
+      {isAr ? "←" : "→"}
+    </span>
+  </span>
+</motion.a>
           </div>
 
           {/* ================= MOBILE CONTROLS & HAMBURGER ================= */}

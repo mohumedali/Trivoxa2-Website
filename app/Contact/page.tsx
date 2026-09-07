@@ -44,14 +44,15 @@ const staggerContainer: Variants = {
   }
 };
 
-const cardHover3D = {
+// حل مشكلة TypeScript هنا بتحديد نوع Variants وإضافة as const للـ ease
+const cardHover3D: Variants = {
   rest: { scale: 1, y: 0, rotateX: 0, rotateY: 0, borderColor: "rgba(163,141,255,0.3)" },
   hover: { 
     scale: 1.02, 
     y: -8, 
     borderColor: "rgba(255,196,0,0.8)",
     boxShadow: "0px 20px 40px rgba(255, 196, 0, 0.25)",
-    transition: { duration: 0.35, ease: "easeOut" }
+    transition: { duration: 0.35, ease: [0, 0, 0.58, 1] } 
   }
 };
 
